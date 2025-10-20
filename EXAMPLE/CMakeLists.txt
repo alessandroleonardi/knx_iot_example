@@ -42,7 +42,7 @@ set(KNX_IOT_STACK_REF master CACHE STRING "The branch of the KNX IoT Stack to us
 set(USE_GITLAB OFF CACHE BOOL "use gitlab as source for KNX IoT Stack")
 
 if(CASCODA_USE_PRIVATE_SDK)
-  set(CASCODA_SDK_REPO https://github.com/Cascoda/cascoda-sdk-priv.git CACHE STRING "")
+  set(CASCODA_SDK_REPO https://$ENV{PROJECT_SDK_SECRET}@github.com/Cascoda/cascoda-sdk-priv.git CACHE STRING "")
 else()
   set(CASCODA_SDK_REPO https://github.com/Cascoda/cascoda-sdk.git CACHE STRING "")
 endif()
@@ -54,7 +54,7 @@ if(USE_GITLAB)
   set(KNX_IOT_STACK_REPO https://gitlab.knx.org/shared-projects/knx-iot-point-api-public-stack/ CACHE STRING "")
 else()
   set(KNX_REPO knx-iot-stack)
-  set(KNX_IOT_STACK_REPO https://github.com/cascoda/knx-iot-stack.git CACHE STRING "")
+  set(KNX_IOT_STACK_REPO https://$ENV{PROJECT_SECRET}@github.com/cascoda/knx-iot-stack.git CACHE STRING "")
 endif()
 
 # KNX IoT Stack
