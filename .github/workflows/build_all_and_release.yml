@@ -1,8 +1,7 @@
 name: BuildAllAndRelease
 # Add secret to environment
 env:
-  PROJECT_SDK_SECRET: ${{secrets.PROJECT_SDK_SECRET}}
-  PROJECT_SECRET: ${{secrets.PROJECT_SECRET}}
+
 on: 
   workflow_dispatch:
     branches: [ main ]
@@ -12,6 +11,8 @@ on:
         required: true
 
 env:
+  PROJECT_SDK_SECRET: ${{secrets.PROJECT_SDK_SECRET}}
+  PROJECT_SECRET: ${{secrets.PROJECT_SECRET}}
   MATRIX: "{ 
        \"config\": [
             {
