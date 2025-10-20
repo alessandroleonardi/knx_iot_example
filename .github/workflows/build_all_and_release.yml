@@ -1,6 +1,5 @@
 name: BuildAllAndRelease
 # Add secret to environment
-env:
 
 on: 
   workflow_dispatch:
